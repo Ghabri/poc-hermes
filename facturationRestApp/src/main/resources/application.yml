@@ -1,0 +1,28 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/factures_db
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: "username"
+    password: "password"
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+#AWS
+cloud:
+  aws:
+    stack:
+      auto: false
+    region:
+      static: eu-west-1
+    credentials:
+      accessKey:
+      secretKey:
+
+facturation:
+  filer:
+    bucket:
+      name: poc-hermess-factures

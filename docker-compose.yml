@@ -1,0 +1,23 @@
+version: '3'
+services:
+  mysql:
+    image: "mysql:latest"
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+      - MYSQL_ROOT_PASSWORD=root
+
+  facturation-rest-app:
+    container_name: facturation-rest-app
+    image: 'poc-hermess/facturation-rest-app:0.0.1-SNAPSHOT'
+    environment:
+      - SPRING_DATASOURCE_URL="jdbc:mysql://localhost:3306/factures_db"
+      - SPRING_DATASpwdOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql

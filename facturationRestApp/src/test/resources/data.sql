@@ -1,0 +1,1 @@
+INSERT INTO FACTURES (id, numero_facture, fichier_id) VALUES ( 100, '2020-001', 'facture-001.png');
